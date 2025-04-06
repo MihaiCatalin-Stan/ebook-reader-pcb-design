@@ -66,19 +66,75 @@ This project contains the 2D and 3D Hardware design of an ebook reader, alongsid
         | USB      | USB_C Connector (Power) |
 * **RTC Module:**
     * Communicates through `I2C` with the uC
+        | Pin  | Signal       |
+        |------|--------------|
+        |Pin1| 32KHZ|
+        |Pin3| INT_RTC|
+        |Pin4| RTC_RST|
+        |Pin14| VRTC|
+        |Pin15| SDA|
+        |Pin16| SCL|
 * **Flash Module:**
     * Communicates through `SPI` with the uC and the other connected components
+        | Pin  | Signal       |
+        |------|--------------|
+        |Pin1| FLASH_CS|
+        |Pin2| MISO|
+        |Pin5| MOSI|
+        |Pin6| SCK|
 * **SD Card Module:**
     * Communicates through `SPI` with the uC and the other connected components
+        | Pin  | Signal       |
+        |------|--------------|
+        |P2| SS_SD|
+        |P3| MOSI|
+        |P5| SCK|
+        |P7| MISO|
 * **E-Paper Display:**
     * Communicates through `SPI` with the uC and the memory modules
+        | Pin  | Signal       |
+        |------|--------------|
+        |Pin2| GDR|
+        |Pin3| RESE|
+        |Pin9| EPD_BUSY|
+        |Pin10| EPD_RST|
+        |Pin11| EPD_DC|
+        |Pin12| EPD_CS|
+        |Pin13| SCK|
+        |Pin14| MOSI|
+        |Pin15-16| EPD_3v3|
+        |Pin21| PREVGH|
+        |Pin23| PREVGL|
 * **Battery Sensor:**
     * Checks the battery level and send data to the uC also with `I2C`
+        | Pin  | Signal       |
+        |------|--------------|
+        |Pin2| VBAT|
+        |Pin3| VBAT|
+        |Pin7| SCL|
+        |Pin8| SDA|
 * **LDO - Voltage Regulator:**
     * Doesn't communicate with the uC but lowers the 5V to 3.3V for the uC and the attached modules
 * **Environmental Sensor:**
     * Communicates through `I2C` with the uC and also with the RTC
+        | Pin  | Signal       |
+        |------|--------------|
+        |Pin2| I2C_PW|
+        |Pin3| SDA|
+        |Pin4| SCL|
+        |Pin6| I2C_PW|
+        |Pin8| I2C_PW|
 * **USB-C Connector:**
     * Power input for charging the battery
+        | Pin  | Signal       |
+        |------|--------------|
+        |B4| VUSB|
+        |B6| DP|
+        |B7| DN|
+        |B9| VUSB|
+        |A4| VUSB|
+        |A6| DP|
+        |A7| DN|
+        |A9| VUSB|
 * **Buttons:**
     * Controls reset, boot and io/change signals by sending them to the uC when pressed
